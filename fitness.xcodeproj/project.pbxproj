@@ -11,6 +11,10 @@
 		B4F4F2A3282010EA00C2DF18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2A2282010EA00C2DF18 /* ContentView.swift */; };
 		B4F4F2A5282010EE00C2DF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F4F2A4282010EE00C2DF18 /* Assets.xcassets */; };
 		B4F4F2A8282010EE00C2DF18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F4F2A7282010EE00C2DF18 /* Preview Assets.xcassets */; };
+		B4F4F2AF2820114700C2DF18 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2AE2820114700C2DF18 /* HomeView.swift */; };
+		B4F4F2B12820116400C2DF18 /* FitnessPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2B02820116400C2DF18 /* FitnessPlusView.swift */; };
+		B4F4F2B32820118900C2DF18 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2B22820118900C2DF18 /* ShareView.swift */; };
+		B4F4F2B5282018D700C2DF18 /* TrainingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		B4F4F2A2282010EA00C2DF18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B4F4F2A4282010EE00C2DF18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4F4F2A7282010EE00C2DF18 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B4F4F2AE2820114700C2DF18 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B4F4F2B02820116400C2DF18 /* FitnessPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessPlusView.swift; sourceTree = "<group>"; };
+		B4F4F2B22820118900C2DF18 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			children = (
 				B4F4F2A0282010EA00C2DF18 /* fitnessApp.swift */,
 				B4F4F2A2282010EA00C2DF18 /* ContentView.swift */,
+				B4F4F2AE2820114700C2DF18 /* HomeView.swift */,
+				B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */,
+				B4F4F2B02820116400C2DF18 /* FitnessPlusView.swift */,
+				B4F4F2B22820118900C2DF18 /* ShareView.swift */,
 				B4F4F2A4282010EE00C2DF18 /* Assets.xcassets */,
 				B4F4F2A6282010EE00C2DF18 /* Preview Content */,
 			);
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F4F2B32820118900C2DF18 /* ShareView.swift in Sources */,
+				B4F4F2AF2820114700C2DF18 /* HomeView.swift in Sources */,
 				B4F4F2A3282010EA00C2DF18 /* ContentView.swift in Sources */,
+				B4F4F2B5282018D700C2DF18 /* TrainingDetailView.swift in Sources */,
 				B4F4F2A1282010EA00C2DF18 /* fitnessApp.swift in Sources */,
+				B4F4F2B12820116400C2DF18 /* FitnessPlusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +289,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -284,7 +301,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,6 +319,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,7 +331,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
