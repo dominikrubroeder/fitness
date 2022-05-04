@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct baseHeader: View {
+struct BaseHeader: View {
     var body: some View {
         Text("Traditionelles Krafttraining")
             .foregroundColor(.accentColor)
@@ -46,43 +46,134 @@ struct ExerciseView: View {
     }
 }
 
+struct LiveStatView: View {
+    let title: String
+    let value: String
+    let unit: String?
+    var color: Color = Color.white
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.caption)
+            
+            HStack(alignment: .bottom, spacing: 0.0) {
+                Text(value)
+                    .font(.largeTitle)
+                    .foregroundColor(color)
+                
+                if (unit != "") {
+                    Text(unit ?? "")
+                        .padding(.bottom, 4.0)
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(16)
+    }
+}
+
 struct LiveTrainingView: View {
+    // title or "category"?
     @State var title: String = ""
     // @State var exercices: [ExerciseView] = []
     @State var exercicesCount = 0
     
     var body: some View {
         NavigationView {
-            List {
-                Section(header: Text("Live stats")) {
-                    // Show live stats (calorie activity, current training time, ...)
-                }
+            ScrollView {
+                BaseHeader()
                 
-                // Add todays date
-                
-                Section(header: baseHeader()) {
-                    TextField("Training title (\"Oberkörper\", \"Push\", \"Pull\")", text: $title)
-                    Text("Title")
-                }
-                
-                if (self.exercicesCount > 0) {
-                    Section(header: Text("Exercises")) {
-                        ForEach(0..<self.exercicesCount) {_ in
-                            ExerciseView()
+                VStack {
+                    Section {
+                        VStack(spacing: 16.0) {
+                            HStack {
+                                HStack {
+                                    HStack(spacing: 0.0) {
+                                        Image(systemName: "location.fill")
+                                        Text("Wolfratshausen")
+                                    }
+                                    
+                                    Text("Offenes Ziel")
+                                        .font(.caption)
+                                    
+                                    HStack {
+                                        Text("17:25 - ...")
+                                    }
+                                    .font(.caption)
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 4.0) {
+                                LiveStatView(title: "Gesamtzeit", value: "0:34:29,92", unit: "", color: Color.yellow)
+                                
+                                LiveStatView(title: "Aktivitätskalorien", value: "796", unit: "kcal")
+                                
+                                LiveStatView(title: "Gesamtkalorien", value: "988", unit: "kcal")
+                                
+                                LiveStatView(title: "ø-Herzfrequenz", value: "121", unit: "bpm")
+                            }
+                            
+                            HStack(alignment: .top) {
+                                VStack(alignment: .leading, spacing: 8.0) {
+                                    Text("Wetter")
+                                        .font(.caption)
+                                    
+                                    HStack(spacing: 8.0) {
+                                        Image(systemName: "sun.max.fill").foregroundColor(.yellow)
+                                        HStack(spacing: 0.0) {
+                                            Text("17")
+                                            Text("Grad")
+                                        }
+                                        .font(.title2)
+                                    }
+                                    
+                                    HStack(spacing: 4.0) {
+                                        Text("Feuchtigkeit:")
+                                        Text("32%")
+                                    }
+                                    .font(.caption)
+                                }
+                                
+                                Spacer()
+                            }
+                            
                         }
                     }
+                    .listRowBackground(Color.clear)
+                    
+                    // Add todays date
+                    
+                    Section {
+                        TextField("Training title (\"Oberkörper\", \"Push\", \"Pull\")", text: $title)
+                    }
+                    
+                    if (self.exercicesCount > 0) {
+                        Section(header: Text("Exercises")) {
+                            ForEach(0..<self.exercicesCount) {_ in
+                                ExerciseView()
+                            }
+                        }
+                    }
+                    
+                    // Section per muscle group (Back, Chest, ...)
                 }
-                
-                // Section per muscle group (Back, Chest, ...)
-            }
-            .navigationTitle("Live training")
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    Button {
-                        self.exercicesCount += 1
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                        Text("Übung hinzufügen")
+                .navigationTitle("Live training")
+                .padding()
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
+                        Spacer()
+                        
+                        Button {
+                            self.exercicesCount += 1
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                            Text("Übung hinzufügen")
+                        }
+                        
+                        Spacer()
                     }
                 }
             }

@@ -67,13 +67,13 @@
 			children = (
 				B4F4F2A0282010EA00C2DF18 /* fitnessApp.swift */,
 				B4F4F2A2282010EA00C2DF18 /* ContentView.swift */,
-				B4F4F2AE2820114700C2DF18 /* HomeView.swift */,
 				B4D1C8A728226F14003A194B /* TrainingData.swift */,
-				B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */,
-				B4C25C2928206478000C5421 /* LiveTrainingView.swift */,
-				B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */,
+				B4F4F2AE2820114700C2DF18 /* HomeView.swift */,
 				B4F4F2B02820116400C2DF18 /* FitnessPlusView.swift */,
 				B4F4F2B22820118900C2DF18 /* ShareView.swift */,
+				B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */,
+				B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */,
+				B4C25C2928206478000C5421 /* LiveTrainingView.swift */,
 				B4F4F2A4282010EE00C2DF18 /* Assets.xcassets */,
 				B4F4F2A6282010EE00C2DF18 /* Preview Content */,
 			);

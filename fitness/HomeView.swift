@@ -233,7 +233,7 @@ struct HomeView: View {
                         
                         VStack(spacing: 4.0) {
                             ForEach(trainings) {training in
-                                NavigationLink(destination: TrainingDetailView()) {
+                                NavigationLink(destination: TrainingDetailView(training: training)) {
                                     TrainingRow(training: training)
                                 }
                             }

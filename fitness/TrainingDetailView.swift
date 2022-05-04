@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TrainingDetailView: View {
+    let training: Training
     @State private var showEditView = false
     
     var body: some View {
@@ -16,24 +17,29 @@ struct TrainingDetailView: View {
                 HStack {
                     ZStack {
                         Circle()
-                            .frame(width: 70.0, height: 70.0)
+                            .frame(width: 75.0, height: 75.0)
+                            .foregroundColor(.accentColor)
+                        
+                        Image(systemName: "\(training.icon)")
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
                     }
                     .frame(width: 100.0, alignment: .leading)
                     
                     
                     VStack(alignment: .leading, spacing: 8.0) {
                         VStack(alignment: .leading) {
-                            Text("Traditionelles Krafttraining")
+                            Text(training.type)
                             Text("Offenes Ziel")
                                 .font(.caption)
                                 .foregroundColor(.accentColor)
                         }
                         
                         VStack(alignment: .leading) {
-                            Text("17:25 - 19:25")
+                            Text(training.timeSpan)
                             HStack(spacing: 0.0) {
                                 Image(systemName: "location.fill")
-                                Text("Wolfratshausen")
+                                Text(training.location)
                             }
                         }
                         .font(.caption)
@@ -45,7 +51,7 @@ struct TrainingDetailView: View {
                     VStack(alignment: .leading) {
                         Text("Gesamtzeit")
                             .font(.caption)
-                        Text("2:00:15")
+                        Text(training.timeTotal)
                             .font(.title2)
                             .foregroundColor(.yellow)
                     }
@@ -55,7 +61,7 @@ struct TrainingDetailView: View {
                         Text("Aktivitätskalorien")
                             .font(.caption)
                         HStack(spacing: 0.0) {
-                            Text("796")
+                            Text("\(training.caloriesActivity)")
                             Text("kcal")
                         }
                         .font(.title2)
@@ -71,7 +77,7 @@ struct TrainingDetailView: View {
                             .font(.caption)
                         
                         HStack(spacing: 0.0) {
-                            Text("988")
+                            Text("\(training.caloriesTotal)")
                             Text("kcal")
                         }
                         .font(.title2)
@@ -83,7 +89,7 @@ struct TrainingDetailView: View {
                         Text("ø-Herzfrequenz")
                             .font(.caption)
                         HStack(spacing: 0.0) {
-                            Text("121")
+                            Text("\(training.heartRateAverage)")
                             Text("bpm")
                         }
                         .font(.title2)
@@ -98,10 +104,11 @@ struct TrainingDetailView: View {
                         Text("Herzfrequenz")
                             .font(.caption)
                         
-                        HStack(spacing: 0.0) {
-                            Text("988")
-                            Text("kcal")
-                        }
+                        Rectangle()
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 150.0)
+                            .foregroundColor(Color(.systemGray6))
+                            .cornerRadius(16.0)
                     }
                     
                     Spacer()
@@ -113,7 +120,8 @@ struct TrainingDetailView: View {
                             .font(.caption)
                         Rectangle()
                             .frame(width: 75.0, height: 75.0)
-                            .cornerRadius(8.0)
+                            .foregroundColor(Color(.systemGray6))
+                            .cornerRadius(12.0)
                     }
                     .frame(width: 100.0, alignment: .leading)
                     
@@ -122,9 +130,9 @@ struct TrainingDetailView: View {
                             .font(.caption)
                         
                         HStack(spacing: 8.0) {
-                            Image(systemName: "sun.max.fill").foregroundColor(.yellow)
+                            Image(systemName: "\(training.weatherImage)").foregroundColor(.yellow)
                             HStack(spacing: 0.0) {
-                                Text("17")
+                                Text("\(training.weatherCelcius)")
                                 Text("Grad")
                             }
                             .font(.title2)
@@ -132,7 +140,7 @@ struct TrainingDetailView: View {
                         
                         HStack(spacing: 4.0) {
                             Text("Feuchtigkeit:")
-                            Text("32%")
+                            Text("\(training.weatherMoisture)")
                         }
                         .font(.caption)
                     }
@@ -152,7 +160,7 @@ struct TrainingDetailView: View {
                         Text("Bearbeiten")
                     }
                     .sheet(isPresented: $showEditView) {
-                        TrainingDetailEditView()
+                        TrainingDetailEditView(training: training)
                     }
                 }
             }
@@ -162,7 +170,7 @@ struct TrainingDetailView: View {
 
 struct TrainingDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingDetailView()
+        TrainingDetailView(training: trainings[0])
             .preferredColorScheme(.dark)
     }
 }
