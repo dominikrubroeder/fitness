@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B4C25C2828206273000C5421 /* TrainingDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */; };
 		B4C25C2A28206478000C5421 /* LiveTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C25C2928206478000C5421 /* LiveTrainingView.swift */; };
+		B4CF65FC2822C71900CC78C6 /* TrainingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF65FB2822C71900CC78C6 /* TrainingRowView.swift */; };
+		B4CF65FE2822C83B00CC78C6 /* ActivityStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF65FD2822C83B00CC78C6 /* ActivityStatsView.swift */; };
+		B4CF66002822C8AD00CC78C6 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF65FF2822C8AD00CC78C6 /* TrendView.swift */; };
+		B4CF66022822C8F700CC78C6 /* LiveTrainingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF66012822C8F700CC78C6 /* LiveTrainingRowView.swift */; };
+		B4CF66042822C93500CC78C6 /* MindfullnessRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF66032822C93500CC78C6 /* MindfullnessRowView.swift */; };
 		B4D1C8A828226F14003A194B /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1C8A728226F14003A194B /* TrainingData.swift */; };
 		B4F4F2A1282010EA00C2DF18 /* fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2A0282010EA00C2DF18 /* fitnessApp.swift */; };
 		B4F4F2A3282010EA00C2DF18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2A2282010EA00C2DF18 /* ContentView.swift */; };
@@ -23,6 +28,11 @@
 /* Begin PBXFileReference section */
 		B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetailEditView.swift; sourceTree = "<group>"; };
 		B4C25C2928206478000C5421 /* LiveTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrainingView.swift; sourceTree = "<group>"; };
+		B4CF65FB2822C71900CC78C6 /* TrainingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingRowView.swift; sourceTree = "<group>"; };
+		B4CF65FD2822C83B00CC78C6 /* ActivityStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatsView.swift; sourceTree = "<group>"; };
+		B4CF65FF2822C8AD00CC78C6 /* TrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendView.swift; sourceTree = "<group>"; };
+		B4CF66012822C8F700CC78C6 /* LiveTrainingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrainingRowView.swift; sourceTree = "<group>"; };
+		B4CF66032822C93500CC78C6 /* MindfullnessRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfullnessRowView.swift; sourceTree = "<group>"; };
 		B4D1C8A728226F14003A194B /* TrainingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 		B4F4F29D282010EA00C2DF18 /* fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F4F2A0282010EA00C2DF18 /* fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fitnessApp.swift; sourceTree = "<group>"; };
@@ -46,6 +56,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4CF66052822CA2C00CC78C6 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B4F4F2AE2820114700C2DF18 /* HomeView.swift */,
+				B4F4F2B02820116400C2DF18 /* FitnessPlusView.swift */,
+				B4F4F2B22820118900C2DF18 /* ShareView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		B4CF66062822CA4F00CC78C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4D1C8A728226F14003A194B /* TrainingData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4CF66072822CA6900CC78C6 /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				B4CF66012822C8F700CC78C6 /* LiveTrainingRowView.swift */,
+				B4CF65FB2822C71900CC78C6 /* TrainingRowView.swift */,
+				B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */,
+				B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */,
+				B4C25C2928206478000C5421 /* LiveTrainingView.swift */,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
+		B4CF66082822CAC700CC78C6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B4CF66032822C93500CC78C6 /* MindfullnessRowView.swift */,
+				B4CF65FF2822C8AD00CC78C6 /* TrendView.swift */,
+				B4CF65FD2822C83B00CC78C6 /* ActivityStatsView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		B4F4F294282010EA00C2DF18 = {
 			isa = PBXGroup;
 			children = (
@@ -65,15 +115,12 @@
 		B4F4F29F282010EA00C2DF18 /* fitness */ = {
 			isa = PBXGroup;
 			children = (
+				B4CF66052822CA2C00CC78C6 /* Navigation */,
+				B4CF66062822CA4F00CC78C6 /* Model */,
+				B4CF66082822CAC700CC78C6 /* Home */,
+				B4CF66072822CA6900CC78C6 /* Training */,
 				B4F4F2A0282010EA00C2DF18 /* fitnessApp.swift */,
 				B4F4F2A2282010EA00C2DF18 /* ContentView.swift */,
-				B4D1C8A728226F14003A194B /* TrainingData.swift */,
-				B4F4F2AE2820114700C2DF18 /* HomeView.swift */,
-				B4F4F2B02820116400C2DF18 /* FitnessPlusView.swift */,
-				B4F4F2B22820118900C2DF18 /* ShareView.swift */,
-				B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */,
-				B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */,
-				B4C25C2928206478000C5421 /* LiveTrainingView.swift */,
 				B4F4F2A4282010EE00C2DF18 /* Assets.xcassets */,
 				B4F4F2A6282010EE00C2DF18 /* Preview Content */,
 			);
@@ -160,12 +207,17 @@
 			files = (
 				B4C25C2A28206478000C5421 /* LiveTrainingView.swift in Sources */,
 				B4F4F2B32820118900C2DF18 /* ShareView.swift in Sources */,
+				B4CF65FE2822C83B00CC78C6 /* ActivityStatsView.swift in Sources */,
 				B4F4F2AF2820114700C2DF18 /* HomeView.swift in Sources */,
 				B4F4F2A3282010EA00C2DF18 /* ContentView.swift in Sources */,
 				B4F4F2B5282018D700C2DF18 /* TrainingDetailView.swift in Sources */,
 				B4C25C2828206273000C5421 /* TrainingDetailEditView.swift in Sources */,
+				B4CF66022822C8F700CC78C6 /* LiveTrainingRowView.swift in Sources */,
 				B4D1C8A828226F14003A194B /* TrainingData.swift in Sources */,
 				B4F4F2A1282010EA00C2DF18 /* fitnessApp.swift in Sources */,
+				B4CF65FC2822C71900CC78C6 /* TrainingRowView.swift in Sources */,
+				B4CF66042822C93500CC78C6 /* MindfullnessRowView.swift in Sources */,
+				B4CF66002822C8AD00CC78C6 /* TrendView.swift in Sources */,
 				B4F4F2B12820116400C2DF18 /* FitnessPlusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
