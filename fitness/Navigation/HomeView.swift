@@ -29,6 +29,7 @@ struct SectionHeader: View {
 }
 
 struct HomeView: View {
+    @State private var animate = false
     @State private var showLiveTrainingView = false
     
     let trendColumns = [

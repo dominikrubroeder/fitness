@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LiveTrainingRowView: View {
+    @State private var animate: Bool = false
+    
     var body: some View {
         HStack {
             Circle()
@@ -27,8 +29,16 @@ struct LiveTrainingRowView: View {
         }
         .padding()
         .foregroundColor(.white)
-        .background(Color.accentColor)
+        .background(animate ? Color.accentColor : Color.accentColor.opacity(0.87))
         .cornerRadius(12.0)
+        .onAppear {
+            self.animate.toggle()
+        }
+        .animation(
+            .easeInOut(duration: 1)
+                .repeatForever(autoreverses: true),
+            value: animate
+        )
     }
 }
 

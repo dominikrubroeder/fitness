@@ -40,6 +40,8 @@ struct ExerciseView: View {
 }
 
 struct LiveStatView: View {
+    @State private var animate: Bool = false
+    
     let title: String
     let value: String
     let unit: String?
@@ -64,9 +66,17 @@ struct LiveStatView: View {
             }
         }
         .padding()
-        .background(Color(.systemGray6))
+        .background(animate ? Color(.systemGray6) : Color.clear)
         .cornerRadius(16)
         .frame(maxWidth: .infinity)
+        .onAppear {
+            self.animate.toggle()
+        }
+        .animation(
+            .easeInOut(duration: 1)
+                .repeatForever(autoreverses: true),
+            value: animate
+        )
     }
 }
 
