@@ -57,7 +57,9 @@ struct ActivityCard: View {
             Circle()
                 .frame(width: 125.0, height: 125.0)
         }
-        .padding(.vertical, 8.0)
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(12.0)
     }
 }
 
@@ -112,7 +114,35 @@ struct TrainingRow: View {
                 }
             }
         }
-        .padding(.vertical, 8.0)
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(12.0)
+    }
+}
+
+struct LiveTrainingRow: View {
+    var body: some View {
+        HStack {
+            Circle()
+                .frame(width: 35.0, height: 35.0)
+            
+            VStack(alignment: .leading) {
+                Text("Traditionelles Krafttraining")
+                    .font(.caption)
+                
+                Text("Live Training")
+                    .font(.title)
+                    .fontWeight(.bold)
+            }
+            
+            Spacer()
+            
+            Image(systemName: "chevron.right")
+        }
+        .padding()
+        .foregroundColor(.white)
+        .background(Color.accentColor)
+        .cornerRadius(12.0)
     }
 }
 
@@ -170,6 +200,8 @@ struct TrendColumn: View {
 }
 
 struct HomeView: View {
+    @State private var showLiveTrainingView = false
+    
     let trendColumns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -177,29 +209,48 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section(header: SectionHeader(title: "Aktivität")) {
-                    ActivityCard()
-                }
-                
-                Section(header: SectionHeader(title: "Trainings")) {
-                    // No Navigation Link but presentSheet
-                    ForEach(0..<3) {_ in
-                        NavigationLink(destination: TrainingDetailView()) {
-                            TrainingRow()
+            ScrollView {
+                VStack(spacing: 32.0) {
+                    VStack(spacing: 8.0) {
+                        SectionHeader(title: "Aktivität")
+                        ActivityCard()
+                    }
+                    
+                    VStack(spacing: 8.0) {
+                        LiveTrainingRow()
+                            .onTapGesture {
+                                showLiveTrainingView = true
+                            }
+                            .sheet(isPresented: $showLiveTrainingView) {
+                                LiveTrainingView()
+                            }
+                    }
+                    
+                    VStack(spacing: 8.0) {
+                        SectionHeader(title: "Trainings")
+                        
+                        VStack(spacing: 4.0) {
+                            ForEach(0..<3) {_ in
+                                NavigationLink(destination: TrainingDetailView()) {
+                                    TrainingRow()
+                                }
+                            }
                         }
                     }
-                }
-                
-                Section(header: SectionHeader(title: "Achtsamkeit")) {
-                    MindfullnessRow()
-                }
-                
-                Section(header: SectionHeader(title: "Trends")) {
-                    TrendColumn()
+                    
+                    VStack(spacing: 8.0) {
+                        SectionHeader(title: "Achtsamkeit")
+                        MindfullnessRow()
+                    }
+                    
+                    VStack(spacing: 8.0) {
+                        SectionHeader(title: "Trends")
+                        TrendColumn()
+                    }
                 }
             }
             .navigationTitle("Übersicht")
+            .padding(.horizontal)
         }
     }
 }
