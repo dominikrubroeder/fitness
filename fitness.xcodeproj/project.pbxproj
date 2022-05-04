@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4C25C2828206273000C5421 /* TrainingDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */; };
+		B4C25C2A28206478000C5421 /* LiveTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C25C2928206478000C5421 /* LiveTrainingView.swift */; };
 		B4F4F2A1282010EA00C2DF18 /* fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2A0282010EA00C2DF18 /* fitnessApp.swift */; };
 		B4F4F2A3282010EA00C2DF18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F2A2282010EA00C2DF18 /* ContentView.swift */; };
 		B4F4F2A5282010EE00C2DF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F4F2A4282010EE00C2DF18 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetailEditView.swift; sourceTree = "<group>"; };
+		B4C25C2928206478000C5421 /* LiveTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrainingView.swift; sourceTree = "<group>"; };
 		B4F4F29D282010EA00C2DF18 /* fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F4F2A0282010EA00C2DF18 /* fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fitnessApp.swift; sourceTree = "<group>"; };
 		B4F4F2A2282010EA00C2DF18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				B4F4F2A2282010EA00C2DF18 /* ContentView.swift */,
 				B4F4F2AE2820114700C2DF18 /* HomeView.swift */,
 				B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */,
+				B4C25C2928206478000C5421 /* LiveTrainingView.swift */,
+				B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */,
 				B4F4F2B02820116400C2DF18 /* FitnessPlusView.swift */,
 				B4F4F2B22820118900C2DF18 /* ShareView.swift */,
 				B4F4F2A4282010EE00C2DF18 /* Assets.xcassets */,
@@ -149,10 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C25C2A28206478000C5421 /* LiveTrainingView.swift in Sources */,
 				B4F4F2B32820118900C2DF18 /* ShareView.swift in Sources */,
 				B4F4F2AF2820114700C2DF18 /* HomeView.swift in Sources */,
 				B4F4F2A3282010EA00C2DF18 /* ContentView.swift in Sources */,
 				B4F4F2B5282018D700C2DF18 /* TrainingDetailView.swift in Sources */,
+				B4C25C2828206273000C5421 /* TrainingDetailEditView.swift in Sources */,
 				B4F4F2A1282010EA00C2DF18 /* fitnessApp.swift in Sources */,
 				B4F4F2B12820116400C2DF18 /* FitnessPlusView.swift in Sources */,
 			);

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TrainingDetailView: View {
+    @State private var showEditView = false
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 16.0) {
@@ -144,11 +146,14 @@ struct TrainingDetailView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
-                        print("Share button was tapped")
+                        showEditView = true
                     } label: {
-                        Image(systemName: "square.and.arrow.up")
+                        // Image(systemName: "square.and.arrow.up")
+                        Text("Bearbeiten")
                     }
-                    // Add Edit button
+                    .sheet(isPresented: $showEditView) {
+                        TrainingDetailEditView()
+                    }
                 }
             }
         }
@@ -158,5 +163,6 @@ struct TrainingDetailView: View {
 struct TrainingDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TrainingDetailView()
+            .preferredColorScheme(.dark)
     }
 }
