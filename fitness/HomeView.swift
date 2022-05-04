@@ -13,7 +13,6 @@ struct ActivityCard: View {
             VStack(alignment: .leading, spacing: 8.0) {
                 VStack(alignment: .leading) {
                     Text("Bewegen")
-                        .font(.caption)
                     
                     HStack(spacing: 0.0) {
                         Text("83/640")
@@ -25,7 +24,6 @@ struct ActivityCard: View {
                 
                 VStack(alignment: .leading) {
                     Text("Trainieren")
-                        .font(.caption)
                     
                     HStack(spacing: 0.0) {
                         Text("2/45")
@@ -37,13 +35,12 @@ struct ActivityCard: View {
                 
                 VStack(alignment: .leading) {
                     Text("Stehen")
-                        .font(.caption)
                     
                     HStack(alignment: .bottom, spacing: 0.0) {
                         Text("4/12")
                             .fontWeight(.bold)
+                        
                         Text("std")
-                            .font(.caption)
                             .fontWeight(.bold)
                             .textCase(.uppercase)
                     }
@@ -56,6 +53,7 @@ struct ActivityCard: View {
             
             Circle()
                 .frame(width: 125.0, height: 125.0)
+                .foregroundColor(Color(.systemGray5))
         }
         .padding()
         .background(Color(.systemGray6))
@@ -70,14 +68,14 @@ struct SectionHeader: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.headline)
+                .font(.title3)
                 .fontWeight(.bold)
                 .textCase(.none)
                 .foregroundColor(.white)
                 
             Spacer()
+            
             Text(link)
-                .font(.caption)
                 .textCase(.none)
                 .foregroundColor(.accentColor)
         }
@@ -91,32 +89,34 @@ struct TrainingRow: View {
         HStack {
             Circle()
                 .frame(width: 35.0, height: 35.0)
+                .foregroundColor(Color(.systemGray5))
             
             VStack(alignment: .leading) {
                 Text(training.type)
-                    .font(.caption)
                 
                 HStack {
-                    HStack(spacing: 0) {
+                    HStack(alignment: .bottom, spacing: 0) {
                         Text("\(training.caloriesActivity)")
+                            .font(.title)
                         Text("kcal")
                             .textCase(.uppercase)
+                            .padding(.bottom, 4.0)
                     }
                     .foregroundColor(.accentColor)
                     
                     Spacer()
                     
-                    HStack(spacing: 0.0) {
+                    HStack(alignment: .center, spacing: 0.0) {
                         Text("Donnerstag")
                         Image(systemName: "chevron.right")
-                        
                     }
-                    .font(.caption2)
+                    .font(.caption)
                     .foregroundColor(.gray)
                 }
             }
         }
         .padding()
+        .foregroundColor(.white)
         .background(Color(.systemGray6))
         .cornerRadius(12.0)
     }
@@ -130,7 +130,6 @@ struct LiveTrainingRow: View {
             
             VStack(alignment: .leading) {
                 Text("Traditionelles Krafttraining")
-                    .font(.caption)
                 
                 Text("Live Training")
                     .font(.title)
@@ -153,6 +152,7 @@ struct MindfullnessRow: View {
         HStack {
             Circle()
                 .frame(width: 35.0, height: 35.0)
+                .foregroundColor(Color(.systemGray5))
             
             VStack(alignment: .leading) {
                 Text("Atmen")
@@ -171,7 +171,6 @@ struct MindfullnessRow: View {
                         Text("29.03.22")
                         Image(systemName: "chevron.right")
                     }
-                    .font(.caption2)
                     .foregroundColor(.gray)
                 }
             }
@@ -188,7 +187,6 @@ struct TrendColumn: View {
             
             VStack(alignment: .leading) {
                 Text("Bewegen")
-                    .font(.caption)
                 
                 HStack(spacing: 0.0) {
                     Text("567")

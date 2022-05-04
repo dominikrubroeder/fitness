@@ -24,14 +24,13 @@ struct TrainingDetailView: View {
                             .foregroundColor(.white)
                             .font(.largeTitle)
                     }
-                    .frame(width: 100.0, alignment: .leading)
+                    .frame(width: 125.0, alignment: .leading)
                     
                     
                     VStack(alignment: .leading, spacing: 8.0) {
                         VStack(alignment: .leading) {
                             Text(training.type)
                             Text("Offenes Ziel")
-                                .font(.caption)
                                 .foregroundColor(.accentColor)
                         }
                         
@@ -42,7 +41,6 @@ struct TrainingDetailView: View {
                                 Text(training.location)
                             }
                         }
-                        .font(.caption)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -50,21 +48,20 @@ struct TrainingDetailView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Gesamtzeit")
-                            .font(.caption)
                         Text(training.timeTotal)
-                            .font(.title2)
+                            .font(.title)
                             .foregroundColor(.yellow)
                     }
-                    .frame(width: 100.0, alignment: .leading)
+                    .frame(width: 125.0, alignment: .leading)
                     
                     VStack(alignment: .leading) {
                         Text("Aktivitätskalorien")
-                            .font(.caption)
+
                         HStack(spacing: 0.0) {
                             Text("\(training.caloriesActivity)")
                             Text("kcal")
                         }
-                        .font(.title2)
+                        .font(.title)
                         .foregroundColor(.red)
                     }
                     
@@ -74,25 +71,24 @@ struct TrainingDetailView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Gesamtkalorien")
-                            .font(.caption)
                         
                         HStack(spacing: 0.0) {
                             Text("\(training.caloriesTotal)")
                             Text("kcal")
                         }
-                        .font(.title2)
+                        .font(.title)
                         .foregroundColor(.red)
                     }
-                    .frame(width: 100.0, alignment: .leading)
+                    .frame(width: 125.0, alignment: .leading)
                     
                     VStack(alignment: .leading) {
                         Text("ø-Herzfrequenz")
-                            .font(.caption)
+
                         HStack(spacing: 0.0) {
                             Text("\(training.heartRateAverage)")
                             Text("bpm")
                         }
-                        .font(.title2)
+                        .font(.title)
                         .foregroundColor(.red)
                     }
                     
@@ -102,7 +98,6 @@ struct TrainingDetailView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Herzfrequenz")
-                            .font(.caption)
                         
                         Rectangle()
                             .frame(maxWidth: .infinity)
@@ -117,17 +112,16 @@ struct TrainingDetailView: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4.0) {
                         Text("Karte")
-                            .font(.caption)
+                        
                         Rectangle()
                             .frame(width: 75.0, height: 75.0)
                             .foregroundColor(Color(.systemGray6))
                             .cornerRadius(12.0)
                     }
-                    .frame(width: 100.0, alignment: .leading)
+                    .frame(width: 125.0, alignment: .leading)
                     
                     VStack(alignment: .leading, spacing: 8.0) {
                         Text("Wetter")
-                            .font(.caption)
                         
                         HStack(spacing: 8.0) {
                             Image(systemName: "\(training.weatherImage)").foregroundColor(.yellow)
@@ -142,7 +136,6 @@ struct TrainingDetailView: View {
                             Text("Feuchtigkeit:")
                             Text("\(training.weatherMoisture)")
                         }
-                        .font(.caption)
                     }
                     
                     Spacer()
