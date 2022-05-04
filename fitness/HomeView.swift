@@ -85,18 +85,20 @@ struct SectionHeader: View {
 }
 
 struct TrainingRow: View {
+    var training: Training
+    
     var body: some View {
         HStack {
             Circle()
                 .frame(width: 35.0, height: 35.0)
             
             VStack(alignment: .leading) {
-                Text("Traditionelles Krafttraining")
+                Text(training.type)
                     .font(.caption)
                 
                 HStack {
                     HStack(spacing: 0) {
-                        Text("795")
+                        Text("\(training.caloriesActivity)")
                         Text("kcal")
                             .textCase(.uppercase)
                     }
@@ -230,9 +232,9 @@ struct HomeView: View {
                         SectionHeader(title: "Trainings")
                         
                         VStack(spacing: 4.0) {
-                            ForEach(0..<3) {_ in
+                            ForEach(trainings) {training in
                                 NavigationLink(destination: TrainingDetailView()) {
-                                    TrainingRow()
+                                    TrainingRow(training: training)
                                 }
                             }
                         }
