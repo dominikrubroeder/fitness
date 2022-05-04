@@ -78,10 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				B4CF66012822C8F700CC78C6 /* LiveTrainingRowView.swift */,
+				B4C25C2928206478000C5421 /* LiveTrainingView.swift */,
 				B4CF65FB2822C71900CC78C6 /* TrainingRowView.swift */,
 				B4F4F2B4282018D700C2DF18 /* TrainingDetailView.swift */,
 				B4C25C2728206273000C5421 /* TrainingDetailEditView.swift */,
-				B4C25C2928206478000C5421 /* LiveTrainingView.swift */,
 			);
 			path = Training;
 			sourceTree = "<group>";

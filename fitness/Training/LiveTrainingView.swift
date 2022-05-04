@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct BaseHeader: View {
-    var body: some View {
-        Text("Traditionelles Krafttraining")
-            .foregroundColor(.accentColor)
-    }
-}
-
 struct Exercise: Identifiable {
     let id = UUID()
     let sets: Int
@@ -59,18 +52,21 @@ struct LiveStatView: View {
             
             HStack(alignment: .bottom, spacing: 0.0) {
                 Text(value)
-                    .font(.largeTitle)
+                    .font(.title)
                     .foregroundColor(color)
                 
                 if (unit != "") {
                     Text(unit ?? "")
                         .padding(.bottom, 4.0)
                 }
+                
+                Spacer()
             }
         }
         .padding()
         .background(Color(.systemGray6))
         .cornerRadius(16)
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -80,33 +76,22 @@ struct LiveTrainingView: View {
     // @State var exercices: [ExerciseView] = []
     @State var exercicesCount = 0
     
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         NavigationView {
             ScrollView {
-                BaseHeader()
+                Text("Traditionelles Krafttraining")
+                    .foregroundColor(.accentColor)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack {
                     Section {
                         VStack(spacing: 16.0) {
-                            HStack {
-                                HStack {
-                                    HStack(spacing: 0.0) {
-                                        Image(systemName: "location.fill")
-                                        Text("Wolfratshausen")
-                                    }
-                                    
-                                    Text("Offenes Ziel")
-                                        .font(.caption)
-                                    
-                                    HStack {
-                                        Text("17:25 - ...")
-                                    }
-                                    .font(.caption)
-                                }
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-                            
-                            VStack(alignment: .leading, spacing: 4.0) {
+                            LazyVGrid(columns: columns, spacing: 8.0) {
                                 LiveStatView(title: "Gesamtzeit", value: "0:34:29,92", unit: "", color: Color.yellow)
                                 
                                 LiveStatView(title: "Aktivitätskalorien", value: "796", unit: "kcal")
@@ -116,28 +101,28 @@ struct LiveTrainingView: View {
                                 LiveStatView(title: "ø-Herzfrequenz", value: "121", unit: "bpm")
                             }
                             
-                            HStack(alignment: .top) {
-                                VStack(alignment: .leading, spacing: 8.0) {
-                                    Text("Wetter")
-                                        .font(.caption)
-                                    
-                                    HStack(spacing: 8.0) {
-                                        Image(systemName: "sun.max.fill").foregroundColor(.yellow)
-                                        HStack(spacing: 0.0) {
-                                            Text("17")
-                                            Text("Grad")
-                                        }
-                                        .font(.title2)
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    HStack(spacing: 4.0) {
+                                        Image(systemName: "location.fill")
+                                            .resizable(resizingMode: .stretch)
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 8.0, height: 8.0)
+                                        Text("Wolfratshausen")
                                     }
                                     
                                     HStack(spacing: 4.0) {
-                                        Text("Feuchtigkeit:")
-                                        Text("32%")
+                                        Image(systemName: "sun.max.fill").foregroundColor(.yellow)
+                                        
+                                        HStack(spacing: 0) {
+                                            Text("17")
+                                            Text("°")
+                                        }
                                     }
-                                    .font(.caption)
+                                    
+                                    Text("Offenes Ziel")
                                 }
-                                
-                                Spacer()
+                                .font(.caption)
                             }
                             
                         }
@@ -161,7 +146,6 @@ struct LiveTrainingView: View {
                     // Section per muscle group (Back, Chest, ...)
                 }
                 .navigationTitle("Live training")
-                .padding()
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
                         Spacer()
@@ -177,6 +161,8 @@ struct LiveTrainingView: View {
                     }
                 }
             }
+            .padding()
+            .background(Color.black)
         }
     }
 }

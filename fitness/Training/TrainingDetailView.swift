@@ -145,11 +145,10 @@ struct TrainingDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .padding(.horizontal)
             .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        showEditView = true
+                        self.showEditView = true
                     } label: {
-                        // Image(systemName: "square.and.arrow.up")
                         Text("Bearbeiten")
                     }
                     .sheet(isPresented: $showEditView) {
